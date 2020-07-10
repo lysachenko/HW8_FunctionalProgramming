@@ -26,8 +26,8 @@ public class Executor {
         System.out.println("Users age over 40:");
         showUsersOverForty(users);
 
-        System.out.println("\nUsers age under 40 and from Dnipro:");
-        showUsersUnderFortyAndLiveInDnipro(users, "Dnepr");
+        System.out.println("\nUsers age under 50 and from Dnipro:");
+        showUsersUnderFiftyAndLiveInDnipro(users, "Dnepr");
 
         System.out.println("\nAverage age in Lvov: " + getEvarageAgeOfUsersInCity(users, "Lvov"));
 
@@ -105,9 +105,9 @@ public class Executor {
                 .count();
     }
 
-    private static void showUsersUnderFortyAndLiveInDnipro(List<User> users, String city) {
+    private static void showUsersUnderFiftyAndLiveInDnipro(List<User> users, String city) {
         users.stream()
-                .filter(user -> user.getAge() < 40)
+                .filter(user -> user.getAge() < 50)
                 .filter(user -> user.getCity().equals(city))
                 .forEach(System.out::println);
     }
