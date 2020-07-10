@@ -29,7 +29,7 @@ public class Executor {
         System.out.println("\nUsers age under 50 and from Dnipro:");
         showUsersUnderFiftyAndLiveInDnipro(users, "Dnepr");
 
-        System.out.println("\nAverage age in Lvov: " + getEvarageAgeOfUsersInCity(users, "Lvov"));
+        System.out.println("\nAverage age in Lvov: " + getAverageAgeOfUsersInCity(users, "Lvov"));
 
         System.out.println("\nCount of Users who did not live in Kyiv: " + getCountOfUsersLiveInCity(users, "Kiev"));
 
@@ -60,7 +60,7 @@ public class Executor {
                 .count();
     }
 
-    private static long getEvarageAgeOfUsersInCity(List<User> users, String city) {
+    private static long getAverageAgeOfUsersInCity(List<User> users, String city) {
         return getSumOfAge(users, city) / getCountOfUsers(users, city);
     }
 
