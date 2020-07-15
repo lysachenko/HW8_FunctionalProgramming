@@ -31,7 +31,7 @@ public class Executor {
 
         System.out.println("\nAverage age in Lvov: " + getAverageAgeOfUsersInCity(users, "Lvov"));
 
-        System.out.println("\nCount of Users who did not live in Kyiv: " + getCountOfUsersLiveInCity(users, "Kiev"));
+        System.out.println("\nCount of Users who did not live in Kyiv: " + getCountOfUsersNotLiveInCity(users, "Kiev"));
 
         System.out.println("\nSorted by age, limit 3 first users: ");
         showSortUsersLimitThree(users);
@@ -48,13 +48,13 @@ public class Executor {
         System.out.println("\nMin element: " + getMinValue(integerList));
 
         System.out.println("\nValue multiple of number two:");
-        showValueMultiplieOfTwo(integerList);
+        showValueMultipleOfTwo(integerList);
 
         System.out.println("\n\nAll values increased by 10:");
         showValuesIncreasedByTen(integerList);
     }
 
-    private static long getCountOfUsersLiveInCity(List<User> users, String city) {
+    private static long getCountOfUsersNotLiveInCity(List<User> users, String city) {
         return users.stream()
                 .filter(user -> !user.getCity().equals(city))
                 .count();
@@ -79,7 +79,7 @@ public class Executor {
                 .forEach(integer -> System.out.print(integer + " "));
     }
 
-    private static void showValueMultiplieOfTwo(List<Integer> integerList) {
+    private static void showValueMultipleOfTwo(List<Integer> integerList) {
         integerList.stream()
                 .filter(integer -> integer % 2 == 0)
                 .forEach(integer -> System.out.print(integer + " "));
